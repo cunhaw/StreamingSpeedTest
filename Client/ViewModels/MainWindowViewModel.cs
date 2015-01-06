@@ -1,5 +1,6 @@
 ﻿using Client.Commands;
 using Client.Models;
+using Common.Utils;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -60,7 +61,7 @@ namespace Client.ViewModels
         {
             get
             {
-                double vSpeed = (fModel.PushStreamContentSize / 1048576) / fModel.PushStreamContentTimeSpan.TotalSeconds;
+                double vSpeed = (fModel.PushStreamContentSize / Constants.C_MB) / fModel.PushStreamContentTimeSpan.TotalSeconds;
                 return string.Format("{0:0.##} MBytes / sec", vSpeed);
             }
         }
@@ -75,7 +76,7 @@ namespace Client.ViewModels
         {
             get
             {
-                double vSpeed = (fModel.StreamContentSize / 1048576) / fModel.StreamContentTimeSpan.TotalSeconds;
+                double vSpeed = (fModel.StreamContentSize / Constants.C_MB) / fModel.StreamContentTimeSpan.TotalSeconds;
                 return string.Format("{0:0.##} MBytes / sec", vSpeed);
             }
         }
@@ -90,7 +91,7 @@ namespace Client.ViewModels
         {
             get
             {
-                double vSpeed = (fModel.StaticSize / 1048576) / fModel.StaticTimeSpan.TotalSeconds;
+                double vSpeed = (fModel.StaticSize / Constants.C_MB) / fModel.StaticTimeSpan.TotalSeconds;
                 return string.Format("{0:0.##} MBytes / sec", vSpeed);
             }
         }

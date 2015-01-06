@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Client.Properties
-{
-
-
+namespace Common.Utils {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,14 +22,14 @@ namespace Client.Properties
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Paths {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Paths() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Client.Properties
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Client.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Common.Utils.Paths", typeof(Paths).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,36 +63,54 @@ namespace Client.Properties
         /// <summary>
         ///   Looks up a localized string similar to http://{0}:{1}/StreamingSpeedTest/GetUsingPushStreamContent.
         /// </summary>
-        internal static string PUSH_STREAM_CONTENT_FORMAT {
+        internal static string CLIENT_PUSH_STREAM_CONTENT_FORMAT {
             get {
-                return ResourceManager.GetString("PUSH_STREAM_CONTENT_FORMAT", resourceCulture);
+                return ResourceManager.GetString("CLIENT_PUSH_STREAM_CONTENT_FORMAT", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to http://{0}:{1}/Resources/TestFile.raw.
         /// </summary>
-        internal static string STATIC_FORMAT {
+        internal static string CLIENT_STATIC_FORMAT {
             get {
-                return ResourceManager.GetString("STATIC_FORMAT", resourceCulture);
+                return ResourceManager.GetString("CLIENT_STATIC_FORMAT", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to http://{0}:{1}/StreamingSpeedTest/GetUsingStreamContent.
         /// </summary>
-        internal static string STREAM_CONTENT_FORMAT {
+        internal static string CLIENT_STREAM_CONTENT_FORMAT {
             get {
-                return ResourceManager.GetString("STREAM_CONTENT_FORMAT", resourceCulture);
+                return ResourceManager.GetString("CLIENT_STREAM_CONTENT_FORMAT", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to {0}\TestFile.raw.
         /// </summary>
-        internal static string TEST_FILE_FORMAT {
+        internal static string CLIENT_TEST_FILE_FORMAT {
             get {
-                return ResourceManager.GetString("TEST_FILE_FORMAT", resourceCulture);
+                return ResourceManager.GetString("CLIENT_TEST_FILE_FORMAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://{0}:{1}/.
+        /// </summary>
+        internal static string COMMON_BASE_ADDRESS {
+            get {
+                return ResourceManager.GetString("COMMON_BASE_ADDRESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}\Resources\TestFile.raw.
+        /// </summary>
+        internal static string SERVER_TEST_FILE_FORMAT {
+            get {
+                return ResourceManager.GetString("SERVER_TEST_FILE_FORMAT", resourceCulture);
             }
         }
     }

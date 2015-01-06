@@ -1,4 +1,4 @@
-﻿using Client.Utils;
+﻿using Common.Utils;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -26,7 +26,7 @@ namespace Client.Models
         {
             get
             {
-                return string.Format(@"http://{0}:{1}/", Host, Port);
+                return PathResolver.GetCommonBaseAddress(Host, Port);
             }
         }
         public TimeSpan PushStreamContentTimeSpan { get; private set; }
@@ -90,7 +90,7 @@ namespace Client.Models
                 {
                     using (Stream vContentStream = await vResponse.Content.ReadAsStreamAsync())
                     {
-                        using (FileStream vFileStream = File.Create(PathResolver.TestFilePath, Constants.C_STREAM_COPY_BUFFER_SIZE))
+                        using (FileStream vFileStream = File.Create(PathResolver.ClientTestFilePath, Constants.C_STREAM_COPY_BUFFER_SIZE))
                         {
                             vStopwatch.Start();
                             fSize = await vContentStream.CopyToStreamDoubleBuffered(vFileStream);
@@ -113,30 +113,30 @@ namespace Client.Models
             fStatusEventArgs.Status = "Downloading file via push stream content";
             RaiseDownloadEvent();
 
-            Uri vDownloadUrl = new Uri(PathResolver.GetPushStreamContentUrl(Host, Port));
+            Uri vDownloadUrl = new Uri(PathResolver.GetClientPushStreamContentUrl(Host, Port));
             PushStreamContentTimeSpan = await DownloadFile(vDownloadUrl);
             PushStreamContentSize = fSize;
 
             fStatusEventArgs.Status = "Downloading file via stream content";
             RaiseDownloadEvent();
 
-            vDownloadUrl = new Uri(PathResolver.GetStreamContentUrl(Host, Port));
+            vDownloadUrl = new Uri(PathResolver.GetClientStreamContentUrl(Host, Port));
             StreamContentTimeSpan = await DownloadFile(vDownloadUrl);
             StreamContentSize = fSize;
 
             fStatusEventArgs.Status = "Downloading file via static link";
             RaiseDownloadEvent();
 
-            vDownloadUrl = new Uri(PathResolver.GetStaticUrl(Host, Port));
+            vDownloadUrl = new Uri(PathResolver.GetClientStaticUrl(Host, Port));
             StaticTimeSpan = await DownloadFile(vDownloadUrl);
             StaticSize = fSize;
 
             fStatusEventArgs.Status = "Downloading finished";
             RaiseDownloadEvent();
 
-            if (File.Exists(PathResolver.TestFilePath))
+            if (File.Exists(PathResolver.ClientTestFilePath))
             {
-                File.Delete(PathResolver.TestFilePath);
+                File.Delete(PathResolver.ClientTestFilePath);
             }
         }
     }

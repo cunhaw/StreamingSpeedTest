@@ -1,4 +1,4 @@
-﻿using Server.Utils;
+﻿using Common.Utils;
 using System;
 using System.IO;
 using System.Net;
@@ -20,7 +20,7 @@ namespace Server.Streaming
         {
             try
             {
-                string vTestFilePath = PathResolver.TestFilePath;
+                string vTestFilePath = PathResolver.ServerTestFilePath;
                 long vFileSize;
                 int vBufferSize = Constants.C_STREAM_COPY_BUFFER_SIZE, vTotalBytesRead, vBufferBytesRead, vBytesRead;
                 byte[] vBuffer = new byte[vBufferSize];

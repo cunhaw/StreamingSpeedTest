@@ -1,5 +1,5 @@
-﻿using Server.Configuration;
-using Server.Utils;
+﻿using Common.Utils;
+using Server.Configuration;
 using System;
 using System.IO;
 
@@ -32,17 +32,17 @@ namespace Server
                 }
             }
 
-            string vTestFilePath = PathResolver.TestFilePath;
+            string vTestFilePath = PathResolver.ServerTestFilePath;
             FileInfo vTestFileInfo = new FileInfo(vTestFilePath);
 
-            if (File.Exists(vTestFilePath) && (vTestFileInfo.Length != (vFileSize * 1048576)))
+            if (File.Exists(vTestFilePath) && (vTestFileInfo.Length != (vFileSize * Constants.C_MB)))
             {
                 File.Delete(vTestFilePath);
             }
 
             if (!File.Exists(vTestFilePath))
             {
-                byte[] vArray = new byte[1048576];
+                byte[] vArray = new byte[Constants.C_MB];
                 using (FileStream vFileStream = File.Open(vTestFilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.None))
                 {
                     byte vByte = 0;
@@ -88,8 +88,8 @@ namespace Server
                     vPort = 0;
                 }
             }
-            
-            string vBaseAddress = string.Format(@"http://{0}:{1}/", vHost, vPort);
+
+            string vBaseAddress = PathResolver.GetCommonBaseAddress(vHost, vPort);
             Console.WriteLine();
 
             try

@@ -117,20 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="PUSH_STREAM_CONTENT_FORMAT" xml:space="preserve">
+  <data name="CLIENT_PUSH_STREAM_CONTENT_FORMAT" xml:space="preserve">
     <value>http://{0}:{1}/StreamingSpeedTest/GetUsingPushStreamContent</value>
     <comment>0 = Host, 1 = Port</comment>
   </data>
-  <data name="STATIC_FORMAT" xml:space="preserve">
+  <data name="CLIENT_STATIC_FORMAT" xml:space="preserve">
     <value>http://{0}:{1}/Resources/TestFile.raw</value>
     <comment>0 = Host, 1 = Port</comment>
   </data>
-  <data name="STREAM_CONTENT_FORMAT" xml:space="preserve">
+  <data name="CLIENT_STREAM_CONTENT_FORMAT" xml:space="preserve">
     <value>http://{0}:{1}/StreamingSpeedTest/GetUsingStreamContent</value>
     <comment>0 = Host, 1 = Port</comment>
   </data>
-  <data name="TEST_FILE_FORMAT" xml:space="preserve">
+  <data name="CLIENT_TEST_FILE_FORMAT" xml:space="preserve">
     <value>{0}\TestFile.raw</value>
+    <comment>The parameter should be Directory.GetCurrentDirectory()</comment>
+  </data>
+  <data name="COMMON_BASE_ADDRESS" xml:space="preserve">
+    <value>http://{0}:{1}/</value>
+    <comment>0 = Host, 1 = Port</comment>
+  </data>
+  <data name="SERVER_TEST_FILE_FORMAT" xml:space="preserve">
+    <value>{0}\Resources\TestFile.raw</value>
     <comment>The parameter should be Directory.GetCurrentDirectory()</comment>
   </data>
 </root>

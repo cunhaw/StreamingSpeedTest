@@ -1,5 +1,5 @@
-﻿using Server.Streaming;
-using Server.Utils;
+﻿using Common.Utils;
+using Server.Streaming;
 using System;
 using System.IO;
 using System.Net;
@@ -39,7 +39,7 @@ namespace Server.Controllers
 
             try
             {
-                FileStream vTestFileStream = File.Open(PathResolver.TestFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                FileStream vTestFileStream = File.Open(PathResolver.ServerTestFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
                 vResponse = Request.CreateResponse();
                 vResponse.Content = new StreamContent(vTestFileStream);

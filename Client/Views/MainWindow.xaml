@@ -4,7 +4,7 @@
         
         xmlns:ViewModels="clr-namespace:Client.ViewModels"
         
-        Title="Streaming Speed Test" Width="600" Height="280"
+        Title="Streaming Speed Test" Width="650" Height="350"
         WindowStartupLocation="CenterScreen" UseLayoutRounding="True">
     
     <Window.DataContext>

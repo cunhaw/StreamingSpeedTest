@@ -18,6 +18,5 @@ namespace Client.Commands
                 vCanExecuteChanged.RaiseCanExecuteChanged();
             }
         }
-
     }
 }

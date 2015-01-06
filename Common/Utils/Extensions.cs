@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 
-namespace Client.Utils
+namespace Common.Utils
 {
     public static class Extensions
     {
