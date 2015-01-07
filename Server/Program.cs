@@ -42,6 +42,12 @@ namespace Server
 
             if (!File.Exists(vTestFilePath))
             {
+                string vDirectoryName = Path.GetDirectoryName(vTestFilePath);
+                if (!Directory.Exists(vDirectoryName))
+                {
+                    Directory.CreateDirectory(vDirectoryName);
+                }
+
                 byte[] vArray = new byte[Constants.C_MB];
                 using (FileStream vFileStream = File.Open(vTestFilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.None))
                 {
